@@ -1,7 +1,7 @@
 const API_BASE =
   window.location.hostname === 'localhost'
     ? 'http://localhost:5000'
-    : 'https://skill-barter.onrender.com';
+    : 'https://skill-barter-hxhk.onrender.com';
 
 const getToken = () => localStorage.getItem('token');
 const getRole = () => localStorage.getItem('role');

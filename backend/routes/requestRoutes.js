@@ -11,7 +11,7 @@ const { sendEmail } = require('../services/emailService');
 
 const router = express.Router();
 
-const SITE_URL = process.env.APP_URL || 'https://skill-barter.onrender.com';
+const SITE_URL = process.env.APP_URL || 'https://skill-barter-hxhk.onrender.com';
 
 /** Compare Mongo ObjectId / string / populated ref safely */
 function idsEqual(a, b) {

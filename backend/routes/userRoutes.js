@@ -54,7 +54,7 @@ router.put('/me', authMiddleware, validateProfileUpdate, async (req, res) => {
               skillName: { $in: newlyAdded }
             }).populate('userId', 'email name');
 
-            const SITE_URL = process.env.APP_URL || 'https://skill-barter.onrender.com';
+            const SITE_URL = process.env.APP_URL || 'https://skill-barter-hxhk.onrender.com';
 
             for (const sub of subs) {
               const receiver = sub.userId;
@@ -107,7 +107,7 @@ router.post('/upload-verification', authMiddleware, upload.single('proof'), asyn
     setImmediate(async () => {
       try {
         const adminEmail = 'skillbarterr@gmail.com';
-        const SITE_URL = process.env.APP_URL || 'http://localhost:5000';
+        const SITE_URL = process.env.APP_URL || 'https://skill-barter-hxhk.onrender.com';
         const approveUrl = `${SITE_URL}/api/admin/verify/${user._id}?status=approved&token=${encodeURIComponent(token)}`;
         const rejectUrl = `${SITE_URL}/api/admin/verify/${user._id}?status=rejected&token=${encodeURIComponent(token)}`;
         await sendEmail(

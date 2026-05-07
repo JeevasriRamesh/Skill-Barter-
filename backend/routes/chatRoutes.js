@@ -90,7 +90,7 @@ router.post('/', authMiddleware, async (req, res) => {
         if (!otherUser?.email) return;
 
        
-        const APP_URL = process.env.APP_URL || 'https://skill-barter.onrender.com';
+        const APP_URL = process.env.APP_URL || 'https://skill-barter-hxhk.onrender.com';
         const preview = String(message)
           .trim()
           .split(/\s+/)
