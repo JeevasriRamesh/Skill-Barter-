@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - Browse Users</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="browse">
+  <div class="app-container">
+    <header class="app-header app-header--with-nav">
+      <div>
+        <h1>Skill Barter</h1>
+        <p>Browse Users</p>
+      </div>
+      <nav class="top-nav">
+        <a href="discovery.html">Dashboard</a>
+        <a href="learning.html">My Learning</a>
+        <a href="requests.html">Requests</a>
+        <a href="profile.html">Profile</a>
+        <button id="logoutBtn" class="btn secondary-btn btn-small">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Available Users</h2>
+        <p class="muted">Find people to exchange skills with.</p>
+        
+        <div class="search-filter-bar">
+          <div class="search-input-group">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              id="searchInput" 
+              class="search-input" 
+              placeholder="Search by name or email..."
+            />
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" for="skillFilter">Filter by skill:</label>
+            <input 
+              type="text" 
+              id="skillFilter" 
+              class="filter-select" 
+              placeholder="e.g., Java, Photoshop"
+              style="min-width: 150px;"
+            />
+          </div>
+          <button id="clearFiltersBtn" class="btn secondary-btn btn-small">Clear</button>
+        </div>
+
+        <div id="browseUsersList" class="list"></div>
+        <div id="browsePagination" class="pagination-container"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/pagination.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+

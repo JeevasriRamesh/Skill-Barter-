@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - Register</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="register">
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Skill Barter</h1>
+      <p>Create an account to start trading skills.</p>
+    </header>
+
+    <main class="card auth-card">
+      <h2>Register</h2>
+      <form id="registerForm" class="form">
+        <div class="form-group">
+          <label for="registerName">Name</label>
+          <input type="text" id="registerName" required />
+        </div>
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" required />
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" required minlength="6" />
+        </div>
+        <button type="submit" class="btn primary-btn">Create Account</button>
+      </form>
+
+      <p class="muted">
+        Already have an account?
+        <a href="index.html">Login here</a>
+      </p>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/validation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+

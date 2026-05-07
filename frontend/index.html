@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="login">
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Skill Barter</h1>
+      <p>Trade skills, not money.</p>
+    </header>
+
+    <main class="card auth-card">
+      <h2>Login</h2>
+      <form id="loginForm" class="form">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required />
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required minlength="6" />
+        </div>
+
+        <div class="form-group-inline">
+          <label for="isAdminLogin">
+            <input type="checkbox" id="isAdminLogin" />
+            Login as admin
+          </label>
+        </div>
+
+        <button type="submit" class="btn primary-btn">Login</button>
+      </form>
+
+      <p class="muted">
+        Don't have an account?
+        <a href="register.html">Register here</a>
+      </p>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/validation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+

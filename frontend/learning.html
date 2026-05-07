@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - My Learning</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="app-header app-header--with-nav">
+      <div>
+        <h1>Skill Barter</h1>
+        <p>My Learning</p>
+      </div>
+      <nav class="top-nav">
+        <a href="discovery.html">Dashboard</a>
+        <a href="requests.html">Requests</a>
+        <a href="learning.html" class="active">My Learning</a>
+        <a href="profile.html">Profile</a>
+        <button id="logoutBtn" class="btn secondary-btn btn-small">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card dashboard-hero">
+        <h2>Learning exchanges</h2>
+        <p class="muted">Your current sessions and progress.</p>
+        <div id="sessionsOverview" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Session chat</h2>
+        <p class="muted">Only available after a request is accepted.</p>
+        <div class="form-group">
+          <label for="chatSessionSelect">Exchange</label>
+          <select id="chatSessionSelect" class="filter-select" style="width:100%;max-width:100%;">
+            <option value="">Select an exchange…</option>
+          </select>
+        </div>
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+        <div class="chat-compose">
+          <input type="text" id="chatInput" class="search-input" style="flex:1;" placeholder="Type a message…" autocomplete="off" />
+          <button type="button" id="chatSendBtn" class="btn primary-btn">Send</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/pagination.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/learning.js"></script>
+</body>
+
+</html>
+

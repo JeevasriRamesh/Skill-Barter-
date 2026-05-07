@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="admin">
+  <div class="app-container">
+    <header class="app-header app-header--with-nav">
+      <div>
+        <h1>Skill Barter</h1>
+        <p>Admin Dashboard</p>
+      </div>
+      <nav class="top-nav">
+        <a href="admin.html" class="active">Dashboard</a>
+        <button id="logoutBtn" class="btn secondary-btn btn-small">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="grid grid-4 stats-grid">
+        <article class="card stat-card">
+          <h3>Total Users</h3>
+          <p id="statTotalUsers" class="stat-number">0</p>
+        </article>
+        <article class="card stat-card">
+          <h3>Total Requests</h3>
+          <p id="statTotalRequests" class="stat-number">0</p>
+        </article>
+        <article class="card stat-card">
+          <h3>Accepted</h3>
+          <p id="statAcceptedRequests" class="stat-number">0</p>
+        </article>
+        <article class="card stat-card">
+          <h3>Rejected</h3>
+          <p id="statRejectedRequests" class="stat-number">0</p>
+        </article>
+      </section>
+
+      <section class="grid grid-2">
+        <article class="card table-card">
+          <h2>User Management</h2>
+          <div class="search-filter-bar" style="margin-bottom: 1rem;">
+            <div class="search-input-group">
+              <span class="search-icon">🔍</span>
+              <input 
+                type="text" 
+                id="adminUserSearch" 
+                class="search-input" 
+                placeholder="Search users..."
+              />
+            </div>
+            <select id="adminUserRoleFilter" class="filter-select">
+              <option value="">All Roles</option>
+              <option value="user">Users</option>
+              <option value="admin">Admins</option>
+            </select>
+            <select id="adminUserBlockedFilter" class="filter-select">
+              <option value="">All Users</option>
+              <option value="false">Active</option>
+              <option value="true">Blocked</option>
+            </select>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Blocked</th>
+                  <th>Verification</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminUsersTableBody"></tbody>
+            </table>
+          </div>
+          <div id="adminUsersPagination" class="pagination-container"></div>
+        </article>
+
+        <article class="card table-card">
+          <h2>Exchange Requests</h2>
+          <div class="search-filter-bar" style="margin-bottom: 1rem;">
+            <select id="adminRequestStatusFilter" class="filter-select">
+              <option value="">All Statuses</option>
+              <option value="pending">Pending</option>
+              <option value="accepted">Accepted</option>
+              <option value="rejected">Rejected</option>
+            </select>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Offered</th>
+                  <th>Requested</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminRequestsTableBody"></tbody>
+            </table>
+          </div>
+          <div id="adminRequestsPagination" class="pagination-container"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/pagination.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+

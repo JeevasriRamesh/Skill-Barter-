@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - Requests</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="requests">
+  <div class="app-container">
+    <header class="app-header app-header--with-nav">
+      <div>
+        <h1>Skill Barter</h1>
+        <p>Your Requests</p>
+      </div>
+      <nav class="top-nav">
+        <a href="discovery.html">Dashboard</a>
+        <a href="learning.html">My Learning</a>
+        <a href="requests.html" class="active">Requests</a>
+        <a href="profile.html">Profile</a>
+        <button id="logoutBtn" class="btn secondary-btn btn-small">Logout</button>
+      </nav>
+    </header>
+
+    <main class="grid grid-2">
+      <section class="card">
+        <h2>Sent Requests</h2>
+        <div id="sentRequestsList" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Received Requests</h2>
+        <div id="receivedRequestsList" class="list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/pagination.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+

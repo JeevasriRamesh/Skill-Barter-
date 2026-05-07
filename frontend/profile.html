@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - Profile</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="app-header app-header--with-nav">
+      <div>
+        <h1>Skill Barter</h1>
+        <p>Profile</p>
+      </div>
+      <nav class="top-nav">
+        <a href="discovery.html">Dashboard</a>
+        <a href="learning.html">My Learning</a>
+        <a href="requests.html">Requests</a>
+        <a href="profile.html" class="active">Profile</a>
+        <button id="logoutBtn" class="btn secondary-btn btn-small">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="grid grid-2">
+        <article class="card profile-card">
+          <h2>Your Profile</h2>
+          <div style="display:flex;align-items:center;gap:0.85rem;margin:0.75rem 0 0.25rem 0;">
+            <img id="profilePhotoImg" class="user-avatar" alt="Profile photo" />
+            <form id="profilePhotoForm" class="form" style="margin-top:0;">
+              <div class="form-group" style="gap:0.25rem;">
+                <label for="profilePhotoFile">Profile photo (JPG/PNG/WEBP)</label>
+                <input type="file" id="profilePhotoFile" accept=".jpg,.jpeg,.png,.webp" />
+              </div>
+              <button type="submit" class="btn secondary-btn btn-small">Upload photo</button>
+            </form>
+          </div>
+          <div id="profileView" class="profile-view">
+            <p><strong>Name:</strong> <span id="profileName"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Age:</strong> <span id="profileAge"></span></p>
+            <p><strong>Preference:</strong> <span id="profilePreference"></span></p>
+            <p><strong>Bio:</strong> <span id="profileBio"></span></p>
+            <p><strong>Skills Offered:</strong> <span id="profileSkillsOffered"></span></p>
+            <p><strong>Skills Wanted:</strong> <span id="profileSkillsWanted"></span></p>
+            <p><strong>Verification:</strong> <span id="profileVerificationStatus" class="tag status-pending">Not submitted</span></p>
+            <p><strong>Rating:</strong> <span id="profileAverageRating">0.0</span> (<span id="profileRatingCount">0</span>)</p>
+          </div>
+
+          <hr />
+
+          <h3>Skill Verification</h3>
+          <form id="verificationForm" class="form">
+            <div class="form-group">
+              <label for="verificationFile">Upload proof (PDF/JPG/PNG/WEBP)</label>
+              <input type="file" id="verificationFile" accept=".pdf,.jpg,.jpeg,.png,.webp" />
+            </div>
+            <button type="submit" class="btn secondary-btn">Submit for verification</button>
+          </form>
+          <p id="verificationProofLink" class="muted"></p>
+        </article>
+
+        <article class="card">
+          <h2>Update Profile</h2>
+          <form id="profileForm" class="form">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" id="age" min="13" max="120" placeholder="e.g. 24" />
+            </div>
+            <div class="form-group">
+              <label for="learningPreference">Learning preference</label>
+              <select id="learningPreference" class="filter-select">
+                <option value="both">Both</option>
+                <option value="learn">Only want to learn</option>
+                <option value="teach">Only want to teach</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bio">Bio</label>
+              <textarea id="bio" rows="3" placeholder="Tell others about your experience..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="skillsOffered">Skills Offered (comma separated)</label>
+              <input type="text" id="skillsOffered" placeholder="e.g. Java, Photoshop, Guitar" />
+            </div>
+            <div class="form-group">
+              <label for="skillsWanted">Skills Wanted (comma separated)</label>
+              <input type="text" id="skillsWanted" placeholder="e.g. Public Speaking, Cooking" />
+            </div>
+            <button type="submit" class="btn primary-btn">Save Profile</button>
+          </form>
+
+          <hr />
+          <h3>Recent feedback received</h3>
+          <div id="profileRatingsList" class="list"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/pagination.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+
+</html>
+

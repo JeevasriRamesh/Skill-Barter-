@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - Discovery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="app-header app-header--with-nav">
+      <div>
+        <h1>Skill Barter</h1>
+        <p>User discovery</p>
+      </div>
+      <nav class="top-nav">
+        <a href="discovery.html" class="active">Dashboard</a>
+        <a href="learning.html">My Learning</a>
+        <a href="requests.html">Requests</a>
+        <a href="profile.html">Profile</a>
+        <button id="logoutBtn" class="btn secondary-btn btn-small">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Discover people</h2>
+        <p class="muted">Search by name/email or skill, then connect.</p>
+
+        <div class="search-filter-bar">
+          <div class="search-input-group">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="discoverySearch" class="search-input" placeholder="Search name or email..." />
+          </div>
+          <input type="text" id="discoverySkill" class="filter-select" placeholder="Search skill (e.g. Java)" />
+          <button id="discoveryClearBtn" class="btn secondary-btn btn-small">Clear</button>
+        </div>
+
+        <div id="notifyMeWrap" class="muted" style="display:none; margin: 0.75rem 0;">
+          No users found for this skill.
+          <button id="notifyMeBtn" type="button" class="btn btn-small primary-btn" style="margin-left:0.5rem;">Notify Me</button>
+        </div>
+
+        <div id="discoveryUsers" class="user-card-scroll"></div>
+        <div id="discoveryPagination" class="pagination-container"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/pagination.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/discovery.js"></script>
+</body>
+
+</html>
+

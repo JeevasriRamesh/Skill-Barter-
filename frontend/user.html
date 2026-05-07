@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Barter - User Profile</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body data-page="user-profile">
+    <div class="app-container">
+      <header class="app-header app-header--with-nav">
+        <div>
+          <h1>Skill Barter</h1>
+          <p>User profile</p>
+        </div>
+        <nav class="top-nav">
+          <a href="/discovery.html">Dashboard</a>
+          <a href="/learning.html">My Learning</a>
+          <a href="/requests.html">Requests</a>
+          <a href="/profile.html">Profile</a>
+          <button id="logoutBtn" class="btn secondary-btn btn-small">Logout</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="card" style="max-width: 760px; margin: 0 auto;">
+          <div style="display:flex; justify-content:flex-start; margin-bottom: 0.75rem;">
+            <button id="userProfileBackBtn" type="button" class="btn secondary-btn btn-small">← Back</button>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:0.35rem;">
+            <img
+              id="userProfileAvatar"
+              class="user-avatar"
+              alt="Profile photo"
+              style="width: 140px; height: 140px;"
+              loading="lazy"
+            />
+            <h2 id="userProfileName" style="margin: 0.25rem 0 0 0;"></h2>
+            <div id="userProfileEmail" class="muted" style="margin-top: 0;"></div>
+          </div>
+
+          <hr style="margin: 1rem 0;" />
+
+          <div id="userProfileBio" class="muted" style="margin-top: 0;"></div>
+
+          <div style="margin-top: 1rem;">
+            <p><strong>Skills Offered:</strong></p>
+            <div id="userProfileSkillsOffered" class="skill-badges"></div>
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <p><strong>Skills Wanted:</strong></p>
+            <div id="userProfileSkillsWanted" class="skill-badges"></div>
+          </div>
+
+          <div style="margin-top: 1rem; display:flex; flex-wrap:wrap; gap: 0.75rem; align-items:center;">
+            <div><strong>Rating:</strong> <span id="userProfileRating"></span></div>
+            <div><strong>Verification:</strong> <span id="userProfileVerification" class="tag status-pending"></span></div>
+          </div>
+
+          <hr style="margin: 1rem 0;" />
+
+          <div>
+            <button id="userProfileSendRequestBtn" type="button" class="btn primary-btn">Send Request</button>
+            <div id="userProfileIntentWrap" style="display:none; margin-top: 0.85rem;">
+              <div class="form-group" style="gap:0.5rem;">
+                <label><strong>Select intent</strong></label>
+                <label style="display:flex; align-items:center; gap:0.5rem;">
+                  <input type="radio" name="userProfileIntent" value="learn" checked />
+                  <span>Only want to learn</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:0.5rem;">
+                  <input type="radio" name="userProfileIntent" value="teach" />
+                  <span>Only want to teach</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:0.5rem;">
+                  <input type="radio" name="userProfileIntent" value="both" />
+                  <span>Both</span>
+                </label>
+              </div>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top: 0.75rem;">
+                <button id="userProfileConfirmSendBtn" type="button" class="btn secondary-btn btn-small">Send now</button>
+                <button id="userProfileCancelIntentBtn" type="button" class="btn secondary-btn btn-small">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/utils/toast.js"></script>
+    <script src="/js/utils/loading.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/user.js"></script>
+  </body>
+</html>
+

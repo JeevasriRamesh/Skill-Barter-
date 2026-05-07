@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Barter - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="dashboard">
+  <div class="app-container">
+    <header class="app-header app-header--with-nav">
+      <div>
+        <h1>Skill Barter</h1>
+        <p>User Dashboard</p>
+      </div>
+      <nav class="top-nav">
+        <a href="discovery.html">Dashboard</a>
+        <a href="learning.html">My Learning</a>
+        <a href="requests.html">Requests</a>
+        <a href="profile.html">Profile</a>
+        <button id="logoutBtn" class="btn secondary-btn btn-small">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card dashboard-hero">
+        <h2>Learning exchanges</h2>
+        <p class="muted">Track structured micro-sessions after a request is accepted.</p>
+        <div id="sessionsOverview" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Session chat</h2>
+        <p class="muted">Available after a request is accepted. Paste Google Meet links as normal text.</p>
+        <div class="form-group">
+          <label for="chatSessionSelect">Exchange</label>
+          <select id="chatSessionSelect" class="filter-select" style="width:100%;max-width:100%;">
+            <option value="">Select an exchange…</option>
+          </select>
+        </div>
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+        <div class="chat-compose">
+          <input type="text" id="chatInput" class="search-input" style="flex:1;" placeholder="Type a message or Meet link…" autocomplete="off" />
+          <button type="button" id="chatSendBtn" class="btn primary-btn">Send</button>
+        </div>
+      </section>
+
+      <section class="grid grid-2">
+        <article class="card profile-card">
+          <h2>Your Profile</h2>
+          <div id="profileView" class="profile-view">
+            <p><strong>Name:</strong> <span id="profileName"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Bio:</strong> <span id="profileBio"></span></p>
+            <p><strong>Skills Offered:</strong> <span id="profileSkillsOffered"></span></p>
+            <p><strong>Skills Wanted:</strong> <span id="profileSkillsWanted"></span></p>
+            <p><strong>Verification:</strong> <span id="profileVerificationStatus" class="tag status-pending">Not submitted</span></p>
+            <p><strong>Rating:</strong> <span id="profileAverageRating">0.0</span> (<span id="profileRatingCount">0</span>)</p>
+          </div>
+
+          <hr />
+
+          <h3>Skill Verification</h3>
+          <form id="verificationForm" class="form">
+            <div class="form-group">
+              <label for="verificationFile">Upload proof (PDF/JPG/PNG/WEBP)</label>
+              <input type="file" id="verificationFile" accept=".pdf,.jpg,.jpeg,.png,.webp" />
+            </div>
+            <button type="submit" class="btn secondary-btn">Submit for verification</button>
+          </form>
+          <p id="verificationProofLink" class="muted"></p>
+
+          <hr />
+
+          <h3>Update Profile</h3>
+          <form id="profileForm" class="form">
+            <div class="form-group">
+              <label for="bio">Bio</label>
+              <textarea id="bio" rows="3" placeholder="Tell others about your experience..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="skillsOffered">Skills Offered (comma separated)</label>
+              <input type="text" id="skillsOffered" placeholder="e.g. Java, Photoshop, Guitar" />
+            </div>
+            <div class="form-group">
+              <label for="skillsWanted">Skills Wanted (comma separated)</label>
+              <input type="text" id="skillsWanted" placeholder="e.g. Public Speaking, Cooking" />
+            </div>
+            <button type="submit" class="btn primary-btn">Save Profile</button>
+          </form>
+
+          <hr />
+          <h3>Recent feedback received</h3>
+          <div id="profileRatingsList" class="list"></div>
+        </article>
+
+        <article class="card match-card">
+          <h2>Skill matches</h2>
+          <p class="muted"><strong>Mutual</strong> = they offer what you want and want what you offer. <strong>Partial</strong> = one-way skill overlap.</p>
+          <h3 class="match-subheading">Mutual matches</h3>
+          <div id="matchedMutualList" class="list"></div>
+          <h3 class="match-subheading">Partial matches</h3>
+          <div id="matchedPartialList" class="list"></div>
+        </article>
+      </section>
+
+      <section class="grid grid-2">
+        <article class="card">
+          <h2>Sent Requests</h2>
+          <div id="sentRequestsList" class="list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Received Requests</h2>
+          <div id="receivedRequestsList" class="list"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/utils/toast.js"></script>
+  <script src="js/utils/modal.js"></script>
+  <script src="js/utils/loading.js"></script>
+  <script src="js/utils/pagination.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+
