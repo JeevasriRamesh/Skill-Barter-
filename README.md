@@ -1,1 +1,4 @@
 Skill Barter is a full-stack peer-to-peer skill exchange platform designed to help users connect and collaborate based on mutual skill sharing instead of money. It allows users to create accounts, build profiles, and list the skills they can offer as well as the skills they want to learn. The platform enables users to browse others’ profiles and send skill exchange requests. Once a request is accepted, both users can collaborate and exchange knowledge through a structured system.Skill Barter focuses on building a collaborative learning environment where users can grow by sharing real-world skills.
+
+Live Demo:
+https://skill-barter-hxhk.onrender.com
